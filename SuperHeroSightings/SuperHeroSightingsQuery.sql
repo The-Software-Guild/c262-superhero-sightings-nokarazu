@@ -43,10 +43,11 @@ CREATE TABLE SuperHero(
 );
 
 CREATE TABLE SuperHeroLocation(
+    superhero_location_id INT AUTO_INCREMENT,
 	superhero_id INT,
 	location_id INT,
 	event_date varchar(9),
-	CONSTRAINT pk_superhero_location PRIMARY KEY(superhero_id, location_id),
+	CONSTRAINT pk_superhero_location PRIMARY KEY(superhero_location_id),
 	CONSTRAINT fk_superhero_superhero_location FOREIGN KEY (superhero_id)
 		REFERENCES SuperHero(superhero_id),
 	CONSTRAINT fk_location_superhero_location FOREIGN KEY (location_id)
@@ -67,10 +68,11 @@ CREATE TABLE SuperVillain(
 );
 
 CREATE TABLE SuperVillainLocation(
+    supervillain_location_id INT AUTO_INCREMENT,
 	villain_id INT,
 	location_id INT,
 	event_date varchar(9),
-	CONSTRAINT pk_superhero_location PRIMARY KEY(villain_id, location_id),
+	CONSTRAINT pk_supervillain_location PRIMARY KEY(supervillain_location_id),
 	CONSTRAINT fk_supervillain_supervillain_location FOREIGN KEY (villain_id)
 		REFERENCES SuperVillain(villain_id),
 	CONSTRAINT fk_location_supervillain_location FOREIGN KEY (location_id)
