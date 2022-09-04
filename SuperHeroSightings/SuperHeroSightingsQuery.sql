@@ -34,14 +34,24 @@ CREATE TABLE SuperHero(
 	hero_name varchar(50),
 	hero_description varchar(150),
 	power_id INT,
-	organization_id INT,
+	-- organization_id INT,
 	CONSTRAINT pk_superhero PRIMARY KEY(superhero_id),
-	CONSTRAINT fk_organization_superhero FOREIGN KEY (organization_id)
-		REFERENCES `Organization`(organization_id),
+	-- CONSTRAINT fk_organization_superhero FOREIGN KEY (organization_id)
+		-- REFERENCES `Organization`(organization_id),
 	CONSTRAINT fk_power_superhero FOREIGN KEY (power_id)
 		REFERENCES Power(power_id)
 );
 
+-- Intermediate table to identify heroes to their orgs. A hero can be associated with multiple orgs.
+CREATE TABLE SuperHeroOrganization(
+	superhero_id INT,
+    organization_id INT,
+    CONSTRAINT pk_superhero_organization PRIMARY KEY(superhero_id, organization_id),
+    CONSTRAINT fk_superhero_superhero_organization FOREIGN KEY(superhero_id)
+		REFERENCES SuperHero(superhero_id),
+	CONSTRAINT fk_organization_superhero_organization FOREIGN KEY(organization_id)
+		REFERENCES `Organization`(organization_id)
+);
 CREATE TABLE SuperHeroLocation(
     superhero_location_id INT AUTO_INCREMENT,
 	superhero_id INT,
@@ -59,11 +69,22 @@ CREATE TABLE SuperVillain(
 	villain_name varchar(50),
 	villain_description varchar(150),
 	power_id INT,
-	organization_id INT,
+	-- organization_id INT,
 	CONSTRAINT pk_villain PRIMARY KEY(villain_id),
 	CONSTRAINT fk_power_supervillain FOREIGN KEY (power_id)
-		REFERENCES Power(power_id),
-	CONSTRAINT fk_organization_supervillain FOREIGN KEY (organization_id)
+		REFERENCES Power(power_id)
+	-- CONSTRAINT fk_organization_supervillain FOREIGN KEY (organization_id)
+		-- REFERENCES `Organization`(organization_id)
+);
+
+-- Intermediate table to identify villains to their orgs. A villain can be associated with multiple orgs.
+CREATE TABLE SuperVillainOrganization(
+	villain_id INT,
+    organization_id INT,
+    CONSTRAINT pk_supervilain_organization PRIMARY KEY(villain_id, organization_id),
+    CONSTRAINT fk_supervillain_supervillain_organization FOREIGN KEY(villain_id)
+		REFERENCES SuperVillain(villain_id),
+	CONSTRAINT fk_organization_supervillain_organization FOREIGN KEY(organization_id)
 		REFERENCES `Organization`(organization_id)
 );
 
