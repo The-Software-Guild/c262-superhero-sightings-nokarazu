@@ -1,12 +1,13 @@
 package com.superherosightings.dto;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class SuperVillain {
     private String villainName;
     private int villainId;
     private String villainDescription;
-    List<Organization> organizations;
+    List<Organization> organizations = new ArrayList<>();
 
     public String getVillainName() {
         return villainName;

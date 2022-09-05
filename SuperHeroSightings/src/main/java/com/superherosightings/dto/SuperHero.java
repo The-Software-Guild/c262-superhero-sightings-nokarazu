@@ -1,12 +1,13 @@
 package com.superherosightings.dto;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class SuperHero {
     private String heroName;
     private int heroId;
     private String heroDescription;
-    List<Organization> organizations;
+    List<Organization> organizations = new ArrayList<>();
 
     public String getHeroName() {
         return heroName;

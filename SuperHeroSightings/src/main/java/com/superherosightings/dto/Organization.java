@@ -1,5 +1,6 @@
 package com.superherosightings.dto;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Organization {
@@ -7,7 +8,7 @@ public class Organization {
     private String orgName;
     private String orgAddress;
     private String orgNumber;
-    List<Member> members;
+    List<Member> members = new ArrayList<>();
 
     public int getOrgId() {
         return orgId;
