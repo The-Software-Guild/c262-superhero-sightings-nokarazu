@@ -4,7 +4,7 @@ public class Member {
     private int memberId;
     private String memberName;
     private String memberTitle;
-    private int orgId;
+    private Organization org;
 
     public int getMemberId() {
         return memberId;
@@ -30,11 +30,11 @@ public class Member {
         this.memberTitle = memberTitle;
     }
 
-    public int getOrgId() {
-        return orgId;
+    public Organization getOrg() {
+        return org;
     }
 
-    public void setOrgId(int orgId) {
-        this.orgId = orgId;
+    public void setOrg(Organization org) {
+        this.org = org;
     }
 }

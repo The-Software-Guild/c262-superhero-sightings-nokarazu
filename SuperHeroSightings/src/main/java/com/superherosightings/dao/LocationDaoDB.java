@@ -23,7 +23,13 @@ public class LocationDaoDB implements LocationDao{
 
     @Override
     public Location addLocation(Location location) {
-        return null;
+        final String INSERT_LOCATION = "INSERT INTO Location(location_name, location_description, location_address_information, location_latitude, location_longitude)"
+                +"VALUES(?,?,?,?,?)";
+        jdbcTemplate.update(INSERT_LOCATION, location.getLocationName(), location.getLocationDescription(), location.getAddressInformation(), location.getLocationLatitude(), location.getLocationLongitude());
+        int newId = jdbcTemplate.queryForObject("SELECT LAST_INSERT_ID()", Integer.class);
+        location.setLocationId(newId);
+
+        return location;
     }
 
     @Override

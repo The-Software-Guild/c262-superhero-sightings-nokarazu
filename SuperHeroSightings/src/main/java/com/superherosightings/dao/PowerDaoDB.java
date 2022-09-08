@@ -10,7 +10,7 @@ import java.sql.SQLException;
 public class PowerDaoDB implements PowerDao{
     @Override
     public Power addPower(Power power) {
-        return null;
+        
     }
 
     @Override
