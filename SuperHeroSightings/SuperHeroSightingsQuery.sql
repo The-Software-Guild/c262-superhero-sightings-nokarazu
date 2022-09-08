@@ -149,6 +149,10 @@ INSERT INTO Location(location_id, location_name, location_description, location_
 INSERT INTO Location(location_id, location_name, location_description, location_address_information, location_latitude, location_longitude) VALUES(4, "Skate Center", "Skatepark in Missouri", "4563 Jibbersih Lane", 12.9, 2.6);
 INSERT INTO SuperHeroLocation(superhero_location_id, superhero_id, location_id) VALUES(1, 1, 2);
 INSERT INTO SuperHeroLocation(superhero_location_id, superhero_id, location_id) VALUES(2, 1, 4);
+SELECT Location.location_id, Location.location_name, Location.location_description, Location.location_address_information, SuperHeroLocation.superhero_location_id, SuperHeroLocation.superhero_id
+FROM Location
+JOIN SuperHeroLocation ON Location.location_id = SuperHeroLocation.location_id
+WHERE SuperHeroLocation.superhero_id = 1;
 -- SELECT Power.power_id, Power.power_type, Power.power_description, SuperHeroPowers.superhero_id
 -- FROM Power
 -- JOIN SuperHeroPowers ON Power.power_id = SuperHeroPowers.power_id

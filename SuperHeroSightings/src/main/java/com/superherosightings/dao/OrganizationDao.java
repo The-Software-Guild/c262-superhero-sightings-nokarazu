@@ -13,12 +13,12 @@ public interface OrganizationDao {
     public Organization getOrganizationById(int orgId);
 
     //Read
-    public List<Member> getMemberOfOrganization(int orgId);
+    //public List<Member> getMembersOfOrganization(int orgId);
 
     //Update
-    public void editOrganization(int orgId);
+    public void editOrganization(Organization organization);
 
     //Delete
-    public boolean deleteOrganization(int orgId);
+    public void deleteOrganization(int orgId);
 
 }

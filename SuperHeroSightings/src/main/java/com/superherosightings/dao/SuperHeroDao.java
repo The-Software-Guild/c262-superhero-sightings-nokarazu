@@ -13,11 +13,11 @@ public interface SuperHeroDao {
     public SuperHero getSuperFromRoster(int heroId);
 
     //Read
-    public List<Organization> getOrgBelongingToHero(SuperHero hero);
+    public List<SuperHero> getAllHeroes();
 
     //Update
-    public void editHeroRoster(int heroId);
+    public void editHeroRoster(SuperHero hero);
 
     //Delete
-    public boolean deleteHeroFromRoster(int heroId);
+    public void deleteHeroFromRoster(int heroId);
 }

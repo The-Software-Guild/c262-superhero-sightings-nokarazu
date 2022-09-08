@@ -9,6 +9,10 @@ public class SuperHero {
     private String heroDescription;
     List<Organization> organizations = new ArrayList<>();
 
+    List<Power> powers = new ArrayList<>();
+
+    List<Location> locations = new ArrayList<>();
+
     public String getHeroName() {
         return heroName;
     }
@@ -40,4 +44,12 @@ public class SuperHero {
     public void setOrganizations(List<Organization> organizations) {
         this.organizations = organizations;
     }
+
+    public List<Power> getPowers(){ return powers; }
+
+    public void setPowers(List<Power> powers){ this.powers = powers; }
+
+    public List<Location> getLocations(){ return locations; }
+
+    public void setLocations(List<Location> locations){ this.locations = locations; }
 }
